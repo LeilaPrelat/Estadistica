@@ -1,0 +1,31 @@
+def Wilcoxon(lista1,lista2):
+    listatot=np.array(list(lista1)+list(lista2))
+    listatot_sort=np.sort(listatot)
+    rank1=0
+    rank2=0
+    for i in range(len(listatot)):
+        if listatot_sort[i]!=listatot_sort[i-1]:
+            posiciones=np.where(listatot==listatot_sort[i])[0]
+            posicionessort=np.where(listatot_sort==listatot_sort[i])[0]
+            sumandorank=np.mean(posicionessort+1)
+            for j in range(len(posiciones)):
+                posicion=posiciones[j]
+                if posicion>=len(lista1):
+                    rank2=rank2+sumandorank
+                else:
+                    rank1=rank1+sumandorank
+    if len(lista1)<=len(lista2):
+        w=rank1
+        n=len(lista1)
+        m=len(lista2)
+    else:
+        w=rank2
+        m=len(lista1)
+        n=len(lista2)        
+    Ew=(n+m+1)*n/2 #Esperanza
+    Vw=n*m*(n+m+1)/12 #Varianza
+    sw=Vw**0.5
+
+    z=(w-Ew)/sw
+    pv=2*np.min([1/2 + erf(z*2**-0.5)/2,1-(1/2 + erf(z*2**-0.5)/2)])
+    return (z,pv)

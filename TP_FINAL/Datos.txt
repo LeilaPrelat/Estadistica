@@ -1,0 +1,46 @@
+¿En qué carpeta guardaste los txt?C:\Users\Usuario\Desktop\Estadistica\TP FINAL\Muestras
+Ejer 2: Convertir patentes a números y viceversa
+Ejer 3.1: Sn(x) y Fo(x)
+Se acepta Ho con una significancia de 0,05
+El p value con la cdf del estadístico es: 0.6530687240384375
+El pvalue del D_obs con 1000 simulaciones de la pdf del estadístico: 0.642
+Ejer 3.2: Distribución exponencial
+El poder del test es 1.0
+True
+Ejer 4.1: Distribución de m
+Ejercicio 4.2: P(n;k,m) a partir de P(m;k,n)
+Valor real de n: 2428510
+Intervalo de n obtenido 2416807.295 2437296.985
+Error porcentual de la estimación obtenida 0.422
+Intervalo de n teórico 2416471.085 2437950.03
+El valor real de n está dentro de la estimación bayesiana obtenida :)
+Ejercicio 4.3: P(n;k,m) con k y m de los datos
+Valor real de n: 2428510
+Intervalo de n obtenido 2416807.295 2437296.985
+Error porcentual de la estimación obtenida 0.422
+Intervalo de n teórico 2416471.085 2437950.03
+El valor real de n está dentro de la estimación bayesiana obtenida :)
+Ejercicio 4.4: Estimaciones bayesianas para n
+El P value del ejer 4.4 es: 0.5134814814814814
+Ejercicio 5.1: Wilcoxon
+El estadístico de Wilcoxon y el P value para Recoleta y San Martín: -0.909958320163713 0.3628444911492996
+Ejercicio 5.2: Test de hipotesis del G8E4
+El estadístico observado y el P value del test G8E4 son: -0.9471919411792155 0.338
+Ejercicio 6.1: Combinando los tests
+La correlacion entre las listas simuladas de manera independiente es: 0.002457239600760617
+Ejercicio 6.2: P values correlacionados
+La correlacion entre pv y pw es: 0.9968153189273847
+El pvalue del T_obs es: 0.3276553106212425
+Ejer 7: Sé tu propia verduga
+El P value para la patente máxima como estadistico es 0.20062
+El P value para la patente mínima como estadistico es 0.38746
+Tiempo total de ejecución en minutos: 9.166019292672475
+
+--------------------
+
+Ejercicio 4.2: P(n;k,m) a partir de P(m;k,n)
+Valor real de n: 2428510
+Intervalo de n obtenido 2423955.886 2515749.785
+Error porcentual de la estimación obtenida 1.858
+Intervalo de n teórico 2420456.325 2523476.259
+El valor real de n está dentro de la estimación bayesiana obtenida :)

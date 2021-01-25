@@ -1,0 +1,77 @@
+#Ejer 2
+print ('Ejercicio 2')
+with open('Barriosmuestras - Hoja1.CSV', newline='') as csvfile:#importa csv pares
+    barrioscsv = list(csv.reader(csvfile))
+
+nummuestras=14 #cantidad de txt 
+
+ABC=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+abc=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+def patentes(lista):
+    patente=[]
+    for l in range(7):
+        patente.append(lista[l])
+    a,b,c,d,e,f,g=patente
+    rta=[]
+    for m in range(len(ABC)):
+        if a==ABC[m] or a==abc[m]:
+            rta0=m+1
+        if b==ABC[m] or b==abc[m]:
+            rta1=m+1
+    rta.append(rta0)
+    rta.append(rta1)
+    rta.append(int(c))
+    rta.append(int(d))
+    rta.append(int(e))
+    for m in range(len(ABC)):
+        if f==ABC[m] or f==abc[m]:
+            rta5=m+1 
+        if g==ABC[m] or g==abc[m]:
+            rta6=m+1 
+    rta.append(rta5)
+    rta.append(rta6)
+    num=rta[6]*26**0+(rta[5]-1)*26**1+rta[4]*26**2+rta[3]*10*26**2+rta[2]*10*10*26**2+(rta[1]-1)*10**3*(26**2)+(rta[0]-1)*10**3*(26**3)
+    return (num,rta)
+
+num, rta=patentes('ZZ999ZZ')
+print(num)
+
+#Separado por barrio (tengo 7 muestras):
+muestrascrudas=[] #no les aplique la funcion patente todavia
+muestrasnum=[] #me quede con el num cuando le aplique la funcion patente
+muestrasrta=[] #me quede con el rta cuando le aplique la funcion patente
+
+largomuestras=[]
+
+#Junto todos los barrios: 
+muestratotcrudo=[]
+muestratotnum=[]
+muestratotrta=[]
+nummuestra=[]
+barriotot=[]
+barrio=[]
+for i in range(nummuestras):
+    muestracrudai =[]
+    muestranumi=[]
+    
+    muestrartai=[]
+
+    with open('muestra%i.txt' %(i+1), "r") as f:
+        for line in f:
+            if line!='\n': #Para sacarse de encima ese caso
+                patente=line
+                muestracrudai.append(patente)
+                numi,rtai=patentes(patente)
+                muestranumi.append(numi)
+                muestrartai.append(rtai)
+                muestratotcrudo.append(patente)
+                muestratotnum.append(numi)
+                muestratotrta.append(rtai)
+                nummuestra.append(i+1)
+                barriotot.append(barrioscsv[i+1][1])
+    muestrascrudas.append(muestracrudai)
+    muestrasnum.append(muestranumi)
+    muestrasrta.append(muestrartai)
+    largomuestras.append(len(muestranumi))
+    barrio.append(barrioscsv[i+1][1])
